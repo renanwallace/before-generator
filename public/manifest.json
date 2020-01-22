@@ -1,10 +1,10 @@
 {
-  "short_name": "chromeextension",
-  "name": "Chrome Extension",
+  "short_name": "Be-generator",
+  "name": "Before Generator",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Chrome Ext"
+    "default_title": "Be Generator"
   },
   "permissions": ["activeTab"],
   "icons": {

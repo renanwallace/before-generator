@@ -1,5 +1,21 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+
 const GlobalStyle = createGlobalStyle`
+
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  *:focus {
+    outline: 0
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
 
   body {
     margin: 0;
@@ -12,9 +28,27 @@ const GlobalStyle = createGlobalStyle`
     height: 500px;
   }
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+  #root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  body, input, button {
+    font: 14px 'Open Sans', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
 
