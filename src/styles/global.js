@@ -50,6 +50,10 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  .before-color-background {
+    background: rgb(248, 110, 50);
+  }
 `;
 
 export default GlobalStyle;
