@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 export default function Default() {
   return (
-    <Container>
+    <Container className="before-color-background">
       <h1>Bem vindo ao default</h1>
       <Link to="/gerador">Gerador</Link>
     </Container>
