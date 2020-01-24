@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: rgb(248, 110, 50);
     width: 500px;
     height: 500px;
   }
@@ -49,10 +50,6 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
-
-  .before-color-background {
-    background: rgb(248, 110, 50);
   }
 `;
 
