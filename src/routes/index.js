@@ -3,16 +3,16 @@ import { Switch } from 'react-router-dom';
 
 import Route from './Route';
 
-import Default from '../pages/Default';
+const Default = lazy(() => import('../pages/Default'));
 const Gerador = lazy(() => import('../pages/Gerador'));
 
 export default function Routes() {
   return (
-    <Switch>
-      <Suspense>
-        <Route path="/gerador" component={Gerador} />
-      </Suspense>
-      <Route exact path="/" component={Default} />
-    </Switch>
+    <Suspense fallback={<h1>Rendering...</h1>}>
+      <Switch>
+        <Route exact path="/" component={() => <Default />} />
+        <Route path="/gerador" component={() => <Gerador />} />
+      </Switch>
+    </Suspense>
   );
 }
