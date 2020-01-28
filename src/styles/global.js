@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${props => props.theme.colors.beforeColor};
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 400px;
   }
 
   #root {

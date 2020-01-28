@@ -3,6 +3,7 @@ module.exports = {
     es6: true,
     jest: true,
     browser: true,
+    webextensions: true,
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
@@ -23,6 +24,7 @@ module.exports = {
     'react-hooks',
     'prettier',
     'syntax-dynamic-import',
+    'chrome'
   ],
   rules: {
     'prettier/prettier': 'error',

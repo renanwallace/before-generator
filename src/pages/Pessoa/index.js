@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
-export default function Gerador() {
+export default function Pessoa() {
   return (
     <Container className="before-color-background">
       <h1>Gerador</h1>
