@@ -1,15 +1,19 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { MemoryRouter } from 'react-router-dom';
+import GlobalStyle from './styles/global';
 import history from './services/history';
 import Routes from './routes';
-import GlobalStyle from './styles/global';
+import theme from './styles/theme';
 
 function App() {
   return (
-    <MemoryRouter history={history}>
-      <GlobalStyle />
-      <Routes />
-    </MemoryRouter>
+    <ThemeProvider theme={theme}>
+      <MemoryRouter history={history}>
+        <GlobalStyle />
+        <Routes />
+      </MemoryRouter>
+    </ThemeProvider>
   );
 }
 

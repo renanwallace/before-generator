@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: rgb(248, 110, 50);
+    background: ${props => props.theme.colors.beforeColor};
     width: 500px;
     height: 500px;
   }
@@ -34,13 +34,15 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
   body, input, button {
     font: 14px 'Open Sans', sans-serif;
   }
 
-  a {
+  a,
+  a:hover {
     text-decoration: none;
   }
 
