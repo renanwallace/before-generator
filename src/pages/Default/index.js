@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import Input from './../../components/InputUnform';
-import { Container } from './styles';
+import Button from '../../components/Button';
+import { ButtonWraper, Container } from './styles';
 
 export default function Default() {
-
-  console.log('renderizei o default');
-
   const [inputValue] = useState('');
 
   return (
-    <Container className="before-color-background">
+    <Container>
       <h1 className="title">Gerador</h1>
       <div>
-        <Input name="CPF" value={inputValue} disabled={false} />
+        <Input name="CPF" value={inputValue} disabled={true} />
       </div>
+      <ButtonWraper>
+        <Button
+          type="button"
+          onClick={() => window.alert('Clicado 1')}
+          text="CPF"
+        />
+        <Button
+          type="button"
+          onClick={() => window.alert('Clicado 2')}
+          text="CNPJ"
+        />
+      </ButtonWraper>
     </Container>
   );
 }
