@@ -13,16 +13,8 @@ export default function Default() {
         <Input name="CPF" value={inputValue} disabled={true} />
       </div>
       <ButtonWraper>
-        <Button
-          type="button"
-          onClick={() => window.alert('Clicado 1')}
-          text="CPF"
-        />
-        <Button
-          type="button"
-          onClick={() => window.alert('Clicado 2')}
-          text="CNPJ"
-        />
+        <Button type="button" onClick={() => {}} text="CPF" />
+        <Button type="button" onClick={() => {}} text="CNPJ" />
       </ButtonWraper>
     </Container>
   );

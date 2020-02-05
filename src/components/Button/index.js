@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from './styles';
 
-function Button({ type, onClick, text, color }) {
+function Button({ type, onClick, text, color, fontColor }) {
   return (
-    <Container color={color}>
+    <Container fontColor={fontColor} color={color}>
       <button type={type} onClick={onClick}>
         {text}
       </button>
@@ -17,10 +17,12 @@ Button.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
   color: PropTypes.string,
+  fontColor: PropTypes.string,
 };
 
 Button.defaultProps = {
-  color: 'black',
+  color: 'white',
+  fontColor: 'black',
 };
 
 export default Button;

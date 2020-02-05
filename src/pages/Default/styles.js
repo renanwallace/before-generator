@@ -17,13 +17,8 @@ export const Container = styled.div`
 
 export const ButtonWraper = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   align-items: center;
   justify-content: center;
-
-  button {
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
-  }
+  margin-top: 2em;
 `;
