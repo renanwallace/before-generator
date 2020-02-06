@@ -12,6 +12,7 @@ export const Container = styled.div`
 
   .title {
     text-align: center;
+    color: white;
   }
 `;
 
