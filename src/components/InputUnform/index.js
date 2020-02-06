@@ -3,24 +3,14 @@ import PropTypes from 'prop-types';
 import { Input } from 'unform';
 import { Container } from './styles';
 
-function InputUnform({
-  name,
-  value,
-  onChange,
-  onclick,
-  multiline,
-  disabled
-}) {
-
-  console.log('renderizei o input');
-
+function InputUnform({ name, value, onChange, onclick, multiline, disabled }) {
   return (
     <Container>
       <Input
         onClick={onclick}
         disabled={disabled}
         multiline={multiline.toString()}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={e => onChange(e.target.value)}
         name={name}
         value={value}
       />
@@ -34,14 +24,14 @@ InputUnform.propTypes = {
   onChange: PropTypes.func,
   onclick: PropTypes.func,
   multiline: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 InputUnform.defaultProps = {
   multiline: false,
   disabled: false,
-  onChange: () => { },
-  onclick: () => { }
+  onChange: () => {},
+  onclick: () => {},
 };
 
 export default InputUnform;

@@ -20,5 +20,17 @@ export const ButtonWraper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 2em;
+  margin: 1em;
+`;
+
+export const SwitchWrapper = styled.div`
+  width: 90%;
+  margin: 1em;
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 80%;
 `;

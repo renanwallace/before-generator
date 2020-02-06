@@ -27,7 +27,6 @@ export const Container = styled.div`
     }
 
     &:active {
-      transform: scale(0.94);
       box-shadow: 0 0 5px 1px lightgrey;
     }
   }
