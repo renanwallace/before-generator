@@ -13,12 +13,14 @@ export const Container = styled.div`
   .title {
     text-align: center;
     color: white;
+    margin: 0.5em 0 1em 0.5em;
+    font-weight: bolder;
   }
 `;
 
 export const ButtonWraper = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: center;
   margin: 1em;
@@ -33,5 +35,17 @@ export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
-  width: 80%;
+  width: 70%;
+
+  input {
+    text-align: center;
+    font-weight: bolder;
+    background: white;
+    font-size: 16px;
+  }
+`;
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  min-height: 60px;
 `;

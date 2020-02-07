@@ -1,18 +1,41 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Button from '../../components/Button';
 import Switch from '../../components/Switch';
 import Input from './../../components/InputUnform';
-import { ButtonWraper, Container, InputWrapper, SwitchWrapper } from './styles';
+import { cpf, cnpj } from '../../helpers/generators';
+import usePersistedState from '../../util/usePersistedState';
+import {
+  ButtonWraper,
+  Container,
+  InfoWrapper,
+  InputWrapper,
+  SwitchWrapper,
+} from './styles';
 
 export default function Default() {
   const cpfRef = useRef(null);
   const cnpjRef = useRef(null);
 
-  const [inputValue] = useState('');
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = usePersistedState('pontuacao', false);
+  const [inputValue, setInputValue] = usePersistedState('inputValue', '');
+  const [showInfo, setShowInfo] = useState(false);
 
-  const onChange = e => setChecked(check => !check);
+  const onChange = () => setChecked(check => !check);
 
+  useEffect(() => {
+    return () => {
+      setShowInfo(true);
+      navigator.clipboard.writeText(inputValue);
+    };
+  }, [inputValue]);
+
+  useEffect(() => {
+    return () => {
+      setTimeout(() => {
+        setShowInfo(false);
+      }, 2500);
+    };
+  }, [showInfo]);
   return (
     <Container>
       <h1 className="title">Gerador</h1>
@@ -28,9 +51,23 @@ export default function Default() {
         />
       </SwitchWrapper>
       <ButtonWraper>
-        <Button type="button" onClick={() => {}} ref={cpfRef} text="CPF" />
-        <Button type="button" onClick={() => {}} ref={cnpjRef} text="CNPJ" />
+        <Button
+          type="button"
+          onClick={() => setInputValue(cpf(checked))}
+          ref={cpfRef}
+          text="CPF"
+        />
+        <Button
+          type="button"
+          onClick={() => setInputValue(cnpj(checked))}
+          ref={cnpjRef}
+          text="CNPJ"
+        />
       </ButtonWraper>
+
+      <InfoWrapper>
+        {showInfo && <span>Copiado para a área de transferência</span>}
+      </InfoWrapper>
     </Container>
   );
 }

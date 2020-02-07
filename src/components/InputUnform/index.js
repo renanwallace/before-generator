@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { Input } from 'unform';
 import { Container } from './styles';
 
-function InputUnform({ name, value, onChange, onclick, multiline, disabled }) {
+function InputUnform({
+  name,
+  value,
+  onChange,
+  onclick,
+  multiline,
+  disabled,
+  ...rest
+}) {
   return (
     <Container>
       <Input
@@ -13,6 +21,7 @@ function InputUnform({ name, value, onChange, onclick, multiline, disabled }) {
         onChange={e => onChange(e.target.value)}
         name={name}
         value={value}
+        {...rest}
       />
     </Container>
   );

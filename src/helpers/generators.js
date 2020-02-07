@@ -7,7 +7,7 @@ function mod(d, dv) {
   return Math.round(d - Math.floor(d / dv) * dv);
 }
 
-function cpf() {
+export function cpf(mask = false) {
   var n = 9;
   var n1 = gera_random(n);
   var n2 = gera_random(n);
@@ -44,7 +44,7 @@ function cpf() {
   d2 = 11 - mod(d2, 11);
   if (d2 >= 10) d2 = 0;
 
-  if (document.form1.mascara.checked)
+  if (mask)
     return (
       '' +
       n1 +
@@ -65,7 +65,7 @@ function cpf() {
   else return '' + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + d1 + d2;
 }
 
-function cnpj() {
+export function cnpj(mask) {
   var n = 9;
   var n1 = gera_random(n);
   var n2 = gera_random(n);
@@ -111,7 +111,7 @@ function cnpj() {
   d2 = 11 - mod(d2, 11);
   if (d2 >= 10) d2 = 0;
 
-  if (document.form1.mascara.checked)
+  if (mask)
     return (
       '' +
       n1 +
