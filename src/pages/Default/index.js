@@ -32,7 +32,7 @@ export default function Default() {
   useEffect(() => {
     return () => {
       setTimeout(() => {
-        setShowInfo(false);
+        if (!showInfo) setShowInfo(false);
       }, 2500);
     };
   }, [showInfo]);

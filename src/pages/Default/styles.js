@@ -47,5 +47,16 @@ export const InputWrapper = styled.div`
 
 export const InfoWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 60px;
+  width: 55%;
+
+  span {
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: black;
+    text-align: center;
+  }
 `;
