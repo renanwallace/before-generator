@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fadeInLeft, fadeInUp } from '../../styles/animations';
+import { fadeInLeft, fadeInDown } from '../../styles/animations';
 
 export const Container = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ export const InfoWrapper = styled.div`
   }
 
   span {
-    animation: 0.4s ${fadeInUp} ease-out;
+    animation: 0.4s ${fadeInDown} ease-out;
     padding: 0.3em;
     color: white;
     font-size: 16px;
