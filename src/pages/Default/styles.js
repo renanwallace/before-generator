@@ -52,11 +52,19 @@ export const InfoWrapper = styled.div`
   min-height: 60px;
   width: 55%;
 
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: grey;
+  }
+
   span {
+    padding: 0.3em;
     color: white;
     font-size: 16px;
     font-weight: bolder;
-    background-color: black;
     text-align: center;
   }
 `;

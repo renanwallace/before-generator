@@ -9,6 +9,8 @@
   "permissions": [
     "activeTab",
     "tabs",
+    "contextMenus",
+    "storage",
     "https://www.before.com.br/"
   ],
   "icons": {

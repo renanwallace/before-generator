@@ -66,7 +66,9 @@ export default function Default() {
       </ButtonWraper>
 
       <InfoWrapper>
-        {showInfo && <span>Copiado para a área de transferência</span>}
+        <div className="info">
+          {showInfo && <span>Copiado para a área de transferência</span>}
+        </div>
       </InfoWrapper>
     </Container>
   );
