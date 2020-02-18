@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Button from '../../components/Button';
 import Switch from '../../components/Switch';
-import Input from './../../components/InputUnform';
-import { cpf, cnpj } from '../../helpers/generators';
+import Input from '../../components/InputUnform';
+import libs from '../../libs';
 import usePersistedState from '../../util/usePersistedState';
 import {
   ButtonWraper,
@@ -36,10 +36,16 @@ export default function Default() {
       }, 2500);
     };
   }, [showInfo]);
+
   return (
     <Container>
       <h1 className="title">Gerador</h1>
-      <InputWrapper>
+      <InputWrapper
+        onClick={() => {
+          setShowInfo(true);
+          navigator.clipboard.writeText(inputValue);
+        }}
+      >
         <Input name="CPF" value={inputValue} disabled={true} />
       </InputWrapper>
       <SwitchWrapper>
@@ -53,22 +59,25 @@ export default function Default() {
       <ButtonWraper>
         <Button
           type="button"
-          onClick={() => setInputValue(cpf(checked))}
+          onClick={() => setInputValue(libs.person.cpf({ formatted: checked }))}
           ref={cpfRef}
           text="CPF"
         />
         <Button
           type="button"
-          onClick={() => setInputValue(cnpj(checked))}
+          onClick={() =>
+            setInputValue(libs.company.cnpj({ formatted: checked }))
+          }
           ref={cnpjRef}
           text="CNPJ"
         />
       </ButtonWraper>
-
       <InfoWrapper>
-        <div className="info">
-          {showInfo && <span>Copiado para a área de transferência</span>}
-        </div>
+        {showInfo && (
+          <div className="info">
+            <span>Copiado para a área de transferência</span>
+          </div>
+        )}
       </InfoWrapper>
     </Container>
   );

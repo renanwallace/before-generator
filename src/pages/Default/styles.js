@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fadeInLeft, fadeInDown } from '../../styles/animations';
+import { fadeInLeft } from '../../styles/animations';
 
 export const Container = styled.div`
   display: flex;
@@ -56,16 +56,18 @@ export const InfoWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid white;
     border-radius: 6px;
-    background-color: grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    animation: 0.4s ${fadeInLeft} ease-out;
   }
 
   span {
-    animation: 0.4s ${fadeInDown} ease-out;
     padding: 0.3em;
     color: white;
     font-size: 16px;
     font-weight: bolder;
     text-align: center;
+    cursor: pointer;
   }
 `;

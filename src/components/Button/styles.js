@@ -24,6 +24,8 @@ export const Container = styled.div`
       opacity: 0.95;
       color: ${props => props.theme.colors.beforeColor};
       background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11),
+        0 6px 20px 0 rgba(0, 0, 0, 0.11);
     }
 
     &:active {
